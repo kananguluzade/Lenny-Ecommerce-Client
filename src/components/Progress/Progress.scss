@@ -1,0 +1,41 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-progress
+  .ant-progress-success-bg,
+:where(.css-dev-only-do-not-override-byeoj0).ant-progress .ant-progress-bg {
+  background-color: $primary100 !important;
+}
+
+.flex-bar {
+  @include d-flex(row, space-between, center);
+  gap: 15px;
+  span{
+    @include d-flex;
+    gap: 5px;
+  }
+}

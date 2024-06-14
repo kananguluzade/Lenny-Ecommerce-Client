@@ -1,0 +1,53 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.input-form-container {
+  @include d-flex(column, space-between, flex-start);
+  gap: 6px;
+  .input-heading {
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.8px;
+    font-size: 16px;
+  }
+
+  .form-input {
+    width: 362px;
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid $dgray300;
+    color: $secondary300;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    line-height: 25.6px;
+  }
+
+  .form-input:focus {
+    outline: none;
+  }
+}

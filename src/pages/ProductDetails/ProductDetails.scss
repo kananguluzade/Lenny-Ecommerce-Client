@@ -1,0 +1,111 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.bread-crumb {
+  margin-top: 30px !important;
+  margin-bottom: 32px !important;
+  .ant-breadcrumb-link {
+    font-family: $cg-main;
+    color: $primary100;
+    @include p2-medium;
+  }
+  ol {
+    &:last-child li span {
+      color: $black300;
+    }
+  }
+}
+
+.product-main-details {
+  @include d-flex(row, space-between, center);
+  gap: 42px;
+  margin-top: 32px;
+  .product-name {
+    width: 50%;
+  }
+  .product-name h2 {
+    @include h2;
+    margin-bottom: 8px;
+  }
+  .stars-solds {
+    @include d-flex(row, flex-start, center);
+    margin-bottom: 16px;
+    gap: 3px;
+    .solds {
+      margin-left: 10px;
+    }
+  }
+  .product-price {
+    @include h4;
+    color: $primary100;
+    margin-bottom: 24px;
+  }
+  .product-description {
+    @include p1-regular-xs;
+    color: $secondary300;
+    border-bottom: 1px solid $dgray300;
+    padding-bottom: 24px;
+  }
+  .variant-heading {
+    font-size: 18px !important;
+    font-weight: 600;
+    color: $black300;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  .variant-flex {
+    @include d-flex(row, flex-start, center);
+    gap: 16px;
+    .variant-type,
+    .variant-color {
+      @include d-flex(column, flex-start, flex-start);
+      gap: 8px;
+      select {
+        width: 140px;
+        height: 44px;
+        border-radius: 8px;
+        border: 1px solid $dgray300;
+        padding-left: 12px;
+        option {
+          :root {
+            --swiper-theme-color: $primary300;
+          }
+        }
+      }
+    }
+  }
+  .button-box {
+    @include d-flex(row, flex-start, center);
+    margin-top: 52px;
+    gap: 16px;
+  }
+}
+
+.tab-lists {
+  margin-top: 52px;
+  margin-bottom: 38px;
+}

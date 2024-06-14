@@ -1,0 +1,37 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link{
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.tab-lists {
+    margin-top: 52px;
+    margin-bottom: 38px;
+  
+    :where(.css-dev-only-do-not-override-byeoj0).ant-tabs
+      .ant-tabs-tab.ant-tabs-tab-active
+      .ant-tabs-tab-btn {
+      color: $primary300;
+    }
+  }

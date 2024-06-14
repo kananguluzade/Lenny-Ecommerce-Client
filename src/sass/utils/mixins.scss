@@ -1,0 +1,198 @@
+@mixin d-flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin h1(
+  $font-size: 58px,
+  $font-weight: 600,
+  $line-height: 70px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h1-xs(
+  $font-size: 34px,
+  $font-weight: 600,
+  $line-height: 41px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h2(
+  $font-size: 38px,
+  $font-weight: 600,
+  $line-height: 53px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h2-xs(
+  $font-size: 18px,
+  $font-weight: 600,
+  $line-height: 25px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h3(
+  $font-size: 32px,
+  $font-weight: 600,
+  $line-height: 45px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h3-xs(
+  $font-size: 14px,
+  $font-weight: 600,
+  $line-height: 20px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h4(
+  $font-size: 28px,
+  $font-weight: 600,
+  $line-height: 39px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h4-xs(
+  $font-size: 12px,
+  $font-weight: 600,
+  $line-height: 17px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h5(
+  $font-size: 24px,
+  $font-weight: 600,
+  $line-height: 34px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h5-xs(
+  $font-size: 10px,
+  $font-weight: 600,
+  $line-height: 14px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin h6(
+  $font-size: 20px,
+  $font-weight: 600,
+  $line-height: 28px,
+  $letter-spacing: -0.2px
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin p1-regular($font-size: 18px, $font-weight: 400, $line-height: 29px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p1-medium($font-size: 18px, $font-weight: 500, $line-height: 29px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p1-regular-xs($font-size: 16px, $font-weight: 400, $line-height: 26px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p1-medium-xs($font-size: 16px, $font-weight: 500, $line-height: 26px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p2-regular($font-size: 14px, $font-weight: 400, $line-height: 22px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p2-medium($font-size: 12px, $font-weight: 500, $line-height: 19px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p3-regular($font-size: 14px, $font-weight: 400, $line-height: 22px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p3-medium($font-size: 14px, $font-weight: 500, $line-height: 22px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p4-regular($font-size: 10px, $font-weight: 400, $line-height: 16px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin p4-medium($font-size: 10px, $font-weight: 500, $line-height: 16px) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}

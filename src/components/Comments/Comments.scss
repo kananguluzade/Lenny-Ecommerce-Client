@@ -1,0 +1,98 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.comments-component{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $dgray300;
+    margin-top: 52px;
+}
+
+.comment {
+  @include h2-xs;
+  margin-top: 16px;
+}
+
+.comment-container{
+  border-bottom: 1px solid $dgray300;
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.comment-date {
+  @include p1-regular-xs;
+  color: $secondary300;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.user-name {
+  @include p1-medium-xs;
+}
+
+.user-img {
+  width: 32px;
+}
+
+.info-and-likes{
+    @include d-flex;
+    justify-content: space-between
+}
+
+.users-info {
+  @include d-flex;
+  gap: 13px;
+}
+
+.like-dislike-btns {
+    @include d-flex;
+    gap: 16px;
+  .like-btn {
+    background-color: transparent;
+    border: 1px solid $dgray300;
+    @include d-flex;
+    gap: 8px;
+    min-width: 48px;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 48px;
+  }
+  .dislike-btn {
+    background-color: transparent;
+    border: 1px solid $dgray300;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.new-comment-component{
+  margin-top: 40px;
+  .input-form{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+

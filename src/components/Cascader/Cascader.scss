@@ -1,0 +1,48 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.category-filter-checker {
+    @include d-flex (column, center, flex-start);
+  gap: 5px;
+  padding-left: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.checkbox-wrapper{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.sub-category-checker{
+
+}
+
+.sub-category-wrapper{
+    @include d-flex(column, center, flex-start);
+    padding-left: 20px;
+}

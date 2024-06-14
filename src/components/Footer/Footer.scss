@@ -1,0 +1,140 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.footer-background {
+  background-color: #f7f7f7;
+}
+
+.foot-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-about {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  max-width: 1150px;
+  margin: 0 auto;
+  height: 444px;
+}
+
+.logo-content {
+  max-width: 313px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  img {
+    width: 104px;
+  }
+}
+
+.logo-content p {
+  line-height: 26px;
+}
+
+.foot-links-container {
+  display: flex;
+  gap: 60px;
+}
+
+.f-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.f-link {
+  list-style: none;
+  cursor: pointer;
+  button {
+    transition: 0.2s;
+    background-color: transparent;
+    border: 0px;
+    @include p1-regular-xs;
+    color: $black300;
+    padding-left: 0px;
+  }
+}
+
+.f-link button:hover {
+  color: #1d9e34;
+}
+
+.contact {
+  max-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-us {
+  border-bottom: 1px solid #e4e9ee;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link-directing {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+}
+
+.list {
+  line-height: 23px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.copy-right {
+  width: 100%;
+  height: 58px;
+  background-color: #f1f1f1;
+}
+
+.copy-right-container {
+  max-width: 1150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  height: 100%;
+}
+
+.terms-privacy {
+  margin-right: 10px;
+  display: flex;
+  gap: 40px;
+}

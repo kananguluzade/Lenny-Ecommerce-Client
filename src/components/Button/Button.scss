@@ -1,0 +1,36 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+@media (max-width: 1024px) {
+  .normal-btn {
+    width: 180px !important;
+    height: 48px !important;
+  }
+  .full-btn {
+    width: 180px !important;
+    height: 50px !important;
+  }
+  .sm-btn{
+    width: 112px !important;
+    height: 42px !important;
+  }
+}
+
+@media (max-width: 768px) {
+    .normal-btn {
+      width: 131px !important;
+      height: 48px !important;
+      font-size: 14px !important;
+    }
+    .full-btn {
+      width: 100% !important;
+      height: 50px !important;
+    }
+    .sm-btn{
+        width: 94px !important;
+        height: 32px !important;
+        font-size: 14px !important;
+      }     
+  }

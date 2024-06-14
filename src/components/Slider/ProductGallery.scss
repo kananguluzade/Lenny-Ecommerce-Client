@@ -1,0 +1,111 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.product-gallery {
+  width: 50%;
+  height: 100%;
+  @include d-flex(column, center, center);
+  gap: 16px;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide-img {
+  object-fit: cover;
+  min-width: 200px;
+  width: 50%;
+}
+
+.swiper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  border-radius: 9px;
+}
+
+.mySwiper2 {
+  width: 100%;
+  margin: 0px;
+  background: $light-gray200;
+  border-radius: 9px;
+  .swiper-wrapper{
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    .swiper-slide{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.mySwiper {
+  width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.swiper-slide-visible {
+  background: $light-gray200;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 135px;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: $black300 !important;
+  font-size: 25px !important;
+}
+
+.prod-slider-thumbnail{
+  width: 86px;
+  height: 86px;
+}

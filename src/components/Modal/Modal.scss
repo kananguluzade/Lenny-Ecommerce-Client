@@ -1,0 +1,162 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ant-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.ant-modal-content {
+  width: 440px;
+  max-height: 622px;
+  padding-left: 24px;
+  padding-top: 32px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  font-family: $cg-main;
+  position: relative;
+  .sign-up-container {
+    height: 642px;
+
+    .button-box button:hover {
+      background-color: transparent !important;
+      color: $primary300 !important;
+      border: 1px solid $primary300 !important;
+    }
+    .sign-up-forms {
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      a {
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+      }
+    }
+  }
+  .sign-in-container {
+    height: 520px;
+
+    .sign-in-form {
+      height: 320px;
+    }
+  }
+  input {
+    width: 100% !important;
+    background-color: $dgray100 !important;
+    color: $black300 !important;
+    @include p2-medium;
+    border: 0px !important;
+    &::placeholder {
+      @include p2-regular;
+      color: $secondary300;
+    }
+  }
+  .button-box {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    :nth-child(1) {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    :nth-child(2) {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    :nth-child(1):hover {
+      background-color: transparent !important;
+      color: $primary300 !important;
+      border: 1px solid $primary300 !important;
+    }
+    :nth-child(2):hover {
+      background-color: $primary300 !important;
+      color: white !important;
+      border: 0px !important;
+    }
+  }
+}
+
+.modal-title {
+  @include h5;
+  margin-bottom: 32px;
+}
+
+.other-method {
+  margin-top: 2rem;
+  @include d-flex(row, space-between, center);
+  .line {
+    background-color: $dgray300;
+    width: 120px;
+    height: 2px;
+  }
+  p {
+    @include p3-medium;
+    color: $secondary300;
+  }
+}
+
+.ant-modal-footer {
+  display: none;
+}
+
+.forgot-pswrd {
+  color: $primary100;
+  @include p3-medium;
+  position: absolute;
+  right: 24px;
+  margin-top: 16px;
+}
+
+.sign-in-fb-btn {
+  @include d-flex;
+  @include h2-xs;
+  width: 100%;
+  margin-top: 32px;
+  height: 48px;
+  border-radius: 12px;
+  color: $black300;
+  border: 1px solid #337fff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #337fff;
+    color: white;
+    svg {
+      transition: 0.3s;
+      path {
+        fill: white;
+      }
+    }
+  }
+}

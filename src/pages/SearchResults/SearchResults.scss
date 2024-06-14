@@ -1,0 +1,75 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.filter-and-products {
+  @include d-flex(row, center, flex-start);
+  gap: 40px;
+  margin-top: 0px;
+}
+
+.pop-products {
+  padding-top: 10px !important;
+}
+
+.products-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px;
+  margin-top: 0px !important;
+  margin-bottom: 52px;
+}
+
+.filter-option {
+  width: 278px !important;
+  border: 1px solid $dgray300;
+  border-radius: 12px;
+  .filter-heading {
+    @include h6;
+    border-bottom: 1px solid $dgray300;
+    margin-left: 24px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    width: 230px;
+  }
+}
+
+
+.ant-menu-title-content {
+  margin-left: 0px !important;
+  @include h3-xs;
+}
+
+.bread-crumb{
+  @include d-flex (row, space-between, center);
+}
+
+ul li ul li div span{
+  color: $secondary300;
+  @include p1-regular;
+}
+
+

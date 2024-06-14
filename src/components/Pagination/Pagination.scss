@@ -1,0 +1,62 @@
+@import "src/sass/utils/reset.scss";
+@import "src/sass/utils/fonts.scss";
+@import "src/sass/utils/variables.scss";
+@import "src/sass/utils/mixins.scss";
+
+* {
+  font-family: $cg-main;
+}
+
+body {
+  font-family: $cg-main;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1216px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 32px;
+  @include d-flex;
+  margin-bottom: 52px;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-item {
+  border: 1px solid $dgray300;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-item-active:hover {
+  border-color: $dgray300;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-item-active
+  a {
+  color: $primary100 !important;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-item-active{
+    border-color: $primary100 !important;
+  }
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-prev
+  .ant-pagination-item-link,
+:where(.css-dev-only-do-not-override-byeoj0).ant-pagination
+  .ant-pagination-next
+  .ant-pagination-item-link {
+  color: $primary100 !important;
+}
