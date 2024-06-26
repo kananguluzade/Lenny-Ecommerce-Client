@@ -5,30 +5,40 @@ import { modalContext } from "src/context/ModalProvider";
 import axios from "axios";
 import { storeUser } from "src/helper";
 
-const initialUser = { password: "", identifier: "" }
+const initialUser = { password: "", identifier: "" };
 
 const SignIn = () => {
-  const { isLogin, setIsLogin, setIsModalOpen, setIsAuth } = useContext(modalContext);
+  const { isLogin, setIsLogin, setIsModalOpen, setIsAuth, errors, setErrors } =
+    useContext(modalContext);
   const [user, setUser] = useState(initialUser);
+  const [invalid, setInvalid] = useState(false);
 
   const action = () => {
-    setIsLogin(false)
-  }
+    setIsLogin(false);
+  };
 
   const handleUserChange = ({ target }) => {
+    setInvalid(false);
     const { name, value } = target;
     setUser((currentUser) => ({
       ...currentUser,
-      [name]: value
-    }))
+      [name]: value,
+    }));
   };
 
+  function wrongInfo() {
+    if (invalid === true) {
+      return "invalid email or password ";
+    }
+  }
+
   const handleLogin = async () => {
+    setInvalid(false);
     try {
-      const url = `${import.meta.env.VITE_APP_STRAPI_BASE_URL
-        }/api/auth/local`
+      const url = `${import.meta.env.VITE_APP_STRAPI_BASE_URL}/api/auth/local`;
       if (user.identifier && user.password) {
         const { data } = await axios.post(url, user);
+        console.log(data);
         if (data.jwt) {
           storeUser(data);
           setUser(initialUser);
@@ -37,17 +47,20 @@ const SignIn = () => {
         }
       }
     } catch (error) {
-      console.log(error);
+      setInvalid(true);
     }
-  }
+  };
 
   return (
     <div className="sign-in-container">
       <h5 className="modal-title">Sign In</h5>
-      <form className="sign-in-form" onSubmit={(e) => {
-        e.preventDefault();
-        handleLogin();
-      }}>
+      <form
+        className="sign-in-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin();
+        }}
+      >
         <Form
           label="Email"
           holder="Enter your Email"
@@ -64,9 +77,7 @@ const SignIn = () => {
           value={user.password}
           onChange={handleUserChange}
         />
-        <a className="forgot-pswrd" href="#">
-          Getting Trouble?
-        </a>
+
         <div className="button-box">
           <MYButton text="Sign In" variant="fill" size="xl" />
           {isLogin && (
@@ -78,6 +89,7 @@ const SignIn = () => {
             />
           )}
         </div>
+        <p className="invalid-info">{wrongInfo()}</p>
       </form>
 
       <div className="other-method">

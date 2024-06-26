@@ -10,14 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@greatsumini/react-facebook-login": "^3.3.3",
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.8.3",
     "axios": "^1.4.0",
     "framer-motion": "^10.15.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-facebook-login": "^4.1.1",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
+    "reactjs-social-login": "^2.6.3",
     "swiper": "^10.2.0",
     "url": "^0.11.1"
   },

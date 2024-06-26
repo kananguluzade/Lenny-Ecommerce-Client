@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SignIn from "src/pages/SignIn";
 import SignUp from "src/pages/SignUp";
-import './Modal.scss';
+import CompletedSignUp from "src/pages/CompletedSignUp";
+import "./Modal.scss";
 
 const Modal = () => {
-  const { isModalOpen, setIsModalOpen, isLogin, setIsLogin } =
+  const { isModalOpen, setIsModalOpen, isLogin, setIsLogin, isRegistered } =
     useContext(modalContext);
 
   const handleOk = () => {
@@ -22,6 +23,7 @@ const Modal = () => {
 
   return (
     <>
+      {isRegistered ? <CompletedSignUp /> : null}
       <AntModal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <AnimatePresence>
           {isLogin ? (

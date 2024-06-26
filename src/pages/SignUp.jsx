@@ -4,49 +4,60 @@ import Form from "src/components/Form/Form";
 import axios from "axios";
 import { modalContext } from "src/context/ModalProvider";
 import { useContext } from "react";
+import Validation from "../Validation";
 
-const initialUser = { username: "", email: "", password: "" }
+const initialUser = { username: "", email: "", password: "" };
 
 const SignUp = () => {
+  const {
+    setIsRegisteredOpen,
+    setIsRegistered,
+    setIsModalOpen,
+    errors,
+    setErrors,
+  } = useContext(modalContext);
 
-  const { setIsLogin } = useContext(modalContext);
-
-  const [user, setUser] = useState(initialUser);  
+  const [user, setUser] = useState(initialUser);
 
   const handleUserChange = ({ target }) => {
     const { name, value } = target;
+    setErrors(Validation(user));
     setUser((currentUser) => ({
       ...currentUser,
-      [name]: value
-    }))
+      [name]: value,
+    }));
   };
 
   //! registerUser is handleSignup event
   const registerUser = async () => {
+    setErrors(Validation(user));
     try {
-      const url = `${import.meta.env.VITE_APP_STRAPI_BASE_URL
-        }/api/auth/local/register`
+      const url = `${
+        import.meta.env.VITE_APP_STRAPI_BASE_URL
+      }/api/auth/local/register`;
       if (user.username && user.password && user.email) {
         const res = await axios.post(url, user);
         if (!!res) {
-          setUser(initialUser);
-          setIsLogin(true);
+          setIsModalOpen(false);
+          setIsRegistered(true);
+          setIsRegisteredOpen(true);
         }
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="sign-up-container">
       <h5 className="modal-title">Sign Up</h5>
       <form
         onSubmit={(e) => {
-          e.preventDefault()
+          e.preventDefault();
           registerUser();
         }}
-        className="sign-up-forms ">
+        className="sign-up-forms "
+      >
         <Form
           label="Username"
           holder="Enter your Username"
@@ -55,6 +66,7 @@ const SignUp = () => {
           value={user.username}
           onChange={handleUserChange}
         />
+        {errors.username && <p className="validation-red">{errors.username}</p>}
         <Form
           label="Email"
           holder="Enter your Email"
@@ -63,6 +75,7 @@ const SignUp = () => {
           value={user.email}
           onChange={handleUserChange}
         />
+        {errors.email && <p className="validation-red">{errors.email}</p>}
         <Form
           label="Password"
           holder="Enter your password"
@@ -71,12 +84,16 @@ const SignUp = () => {
           value={user.password}
           onChange={handleUserChange}
         />
+        {errors.password && <p className="validation-red">{errors.password}</p>}
 
-        <a className="forgot-pswrd" href="#">
-          Getting Trouble?
-        </a>
         <div className="button-box">
-          <MYButton type="submit" className="signup-button" text="Sign Up" variant="outline" size="xl" />
+          <MYButton
+            type="submit"
+            className="signup-button"
+            text="Sign Up"
+            variant="outline"
+            size="xl"
+          />
         </div>
       </form>
 
@@ -85,6 +102,7 @@ const SignUp = () => {
         <p>Or using other method</p>
         <div className="line"></div>
       </div>
+
       <button className="sign-in-fb-btn">
         <svg
           width="28"
